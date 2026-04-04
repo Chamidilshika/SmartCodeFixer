@@ -21,7 +21,7 @@ JavaScript
 Backend:
 
 Python
-Flask (or change if you used another framework)
+Flask 
 
 AI / ML:
 
