@@ -6,9 +6,9 @@ SmartCodeFixer is an AI-powered system designed to automatically detect coding e
 This system analyzes code input, identifies potential issues, and recommends optimized solutions in real-time, making it especially useful for beginners and developers working on complex projects.
 
 # Objectives
-Automate the detection of common coding errors
-Provide intelligent and accurate fix suggestions
-Reduce debugging time and effort
+Automate the detection of common coding errors,
+Provide intelligent and accurate fix suggestions,
+Reduce debugging time and effort,
 Enhance coding efficiency and learning experience
 
 # Tech Stack
@@ -28,17 +28,17 @@ AI / ML:
 Machine Learning models
 
 # Features
-Automatic code error detection
-AI-based suggestions for fixing bugs
-User-friendly interface
-Fast and efficient processing
+Automatic code error detection,
+AI-based suggestions for fixing bugs,
+User-friendly interface,
+Fast and efficient processing,
 Supports real-time input analysis (if applicable)
 
 
 # Usage
-Open the application in your browser
-Enter or paste your code
-Click Analyze
+Open the application in your browser,
+Enter or paste your code,
+Click Analyze,
 View detected errors and suggested fixes
 
 # Author
