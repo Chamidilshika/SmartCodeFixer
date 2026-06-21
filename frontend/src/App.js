@@ -2,6 +2,9 @@ import { useState } from "react";
 import axios from "axios";
 import "./App.css";
 
+// Your direct Hugging Face API Base URL
+const BACKEND_URL = "https://chamidilshika-smart-code-fixer.hf.space";
+
 function App() {
   const [code, setCode] = useState("");
   const [summary, setSummary] = useState("");
@@ -15,14 +18,21 @@ function App() {
     try {
       let url = "";
 
-      if (type === "summarize") url = "http://127.0.0.1:8000/summarize";
-      if (type === "detect") url = "http://127.0.0.1:8000/detect-bug";
-      if (type === "fix") url = "http://127.0.0.1:8000/fix-code";
+      // Pointing directly to Hugging Face routes
+      if (type === "summarize") url = `${BACKEND_URL}/summarize`;
+      if (type === "detect") url = `${BACKEND_URL}/detect-bug`;
+      if (type === "fix") url = `${BACKEND_URL}/fix-code`;
 
       const res = await axios.post(url, { code });
 
       if (type === "summarize") setSummary(res.data.summary);
-      if (type === "detect") setBugs(res.data.issues);
+      if (type === "detect") {
+        // If bugs return an array of strings, join them cleanly with a newline
+        const issues = Array.isArray(res.data.issues) 
+          ? res.data.issues.join("\n") 
+          : res.data.issues;
+        setBugs(issues);
+      }
       if (type === "fix") setFixed(res.data.fixed_code);
     } catch (err) {
       alert("Error connecting to backend!");
